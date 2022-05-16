@@ -58,7 +58,7 @@ public void setBookPublisher(String bookPublisher) {
 	this.bookPublisher = bookPublisher;
 }
 }
-//BookModel NO2
+//BookModel NO28
 	
 	
 	
