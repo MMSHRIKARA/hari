@@ -1,0 +1,308 @@
+Microsoft Windows [Version 10.0.19043.1766]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\MMSRIK>mongodb+srv://Shrikara:Capg8828@test.jcfsh2h.mongodb.net/test
+'mongodb+srv:' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\MMSRIK>mongosh
+Current Mongosh Log ID: 62b1998bbf40a072a3305156
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.5.0
+MongoNetworkError: connect ECONNREFUSED 127.0.0.1:27017
+
+C:\Users\MMSRIK>mongodb+srv://Shrikara:Capg8828@test.jcfsh2h.mongodb.net/test
+'mongodb+srv:' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\MMSRIK>show dbs
+'show' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\MMSRIK>mongo
+'mongo' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\MMSRIK>mongosh "mongodb+srv://test.jcfsh2h.mongodb.net/Test" --apiVersion 1 --username Shrikara --password Capg8828
+Current Mongosh Log ID: 62b19b34094f53e8d6b2db29
+Connecting to:          mongodb+srv://<credentials>@test.jcfsh2h.mongodb.net/Test?appName=mongosh+1.5.0
+Using MongoDB:          5.0.9 (API Version 1)
+Using Mongosh:          1.5.0
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+Atlas atlas-12pcvr-shard-0 [primary] Test> show dbs
+test    80.00 KiB
+admin  336.00 KiB
+local    3.62 GiB
+Atlas atlas-12pcvr-shard-0 [primary] Test> use test
+switched to db test
+Atlas atlas-12pcvr-shard-0 [primary] test>> db.createCollection("movies")
+{ "ok" : 1 }
+> db.movies.insertMany([{
+...          title : "Fight Club",
+...           writer : "Chuck Palahniuko",
+...            year : 1999,
+...             actors : [ "Brad Pitt", "Edward Norton" ]
+...     },
+...      {
+...          title : "Pulp Fiction",
+...           writer : "Quentin Tarantino",
+...            year : 1994,
+...             actors : [ "John Travolta", "Uma Thurman" ]
+...      },{
+...
+...      title : "Inglorious Basterds",
+...       writer : "Quentin Tarantino",
+...        year : 2009,
+...         actors : [ "Brad Pitt", "Diane Kruger", "Eli Roth" ]
+...      },
+...      {title : "The Hobbit: An Unexpected Journey",
+...           writer : "J.R.R. Tolkein",
+...            year : 2012,
+...             franchise : "The Hobbit"
+...
+...      },
+...      {
+...          title : "The Hobbit: The Desolation of Smaug",
+...           writer : "J.R.R. Tolkein",
+...      year : 2013,
+...       franchise : "The Hobbit"
+...      },
+...      {
+...          title : "The Hobbit: The Battle of the Five Armies",
+...           writer : "J.R.R. Tolkein",
+...            year : 2012,
+...              synopsis : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness."
+...      },
+...      {
+...          title : "Pee Wee Herman's Big Adventure"
+...      },
+...      {
+...          title : "Avatar"
+...      }
+...      ])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("62b1832f0338e5c83b6c9baa"),
+                ObjectId("62b1832f0338e5c83b6c9bab"),
+                ObjectId("62b1832f0338e5c83b6c9bac"),
+                ObjectId("62b1832f0338e5c83b6c9bad"),
+                ObjectId("62b1832f0338e5c83b6c9bae"),
+                ObjectId("62b1832f0338e5c83b6c9baf"),
+                ObjectId("62b1832f0338e5c83b6c9bb0"),
+                ObjectId("62b1832f0338e5c83b6c9bb1")
+        ]
+}
+Atlas atlas-12pcvr-shard-0 [primary] test> db.movies.find()
+[
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90a"),
+    title: 'Fight Club',
+    writer: 'Chuck Palahniuko',
+    year: 1999,
+    actors: [ 'Brad Pitt', 'Edward Norton' ]
+  },
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90b"),
+    title: 'Pulp Fiction',
+    writer: 'Quentin Tarantino',
+    year: 1994,
+    actors: [ 'John Travolta', 'Uma Thurman' ]
+  },
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90c"),
+    title: 'Inglorious Basterds',
+    writer: 'Quentin Tarantino',
+    year: 2009,
+    actors: [ 'Brad Pitt', 'Diane Kruger', 'Eli Roth' ]
+  },
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90d"),
+    title: 'The Hobbit: An Unexpected Journey',
+    writer: 'J.R.R. Tolkein',
+    year: 2012,
+    franchise: 'The Hobbit'
+  },
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90e"),
+    title: 'The Hobbit: The Desolation of Smaug',
+    writer: 'J.R.R. Tolkein',
+    year: 2013,
+    franchise: 'The Hobbit'
+  },
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90f"),
+    title: 'The Hobbit: The Battle of the Five Armies',
+    writer: 'J.R.R. Tolkein',
+    year: 2012,
+    synopsis: 'Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness.'
+  },
+  {
+    _id: ObjectId("62b183db11d0dec46e11a910"),
+    title: "Pee Wee Herman's Big Adventure"
+  },
+  { _id: ObjectId("62b183db11d0dec46e11a911"), title: 'Avatar' }
+]
+Atlas atlas-12pcvr-shard-0 [primary] test> db.movies.find({writer:"Quentin Tarantino"})
+[
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90b"),
+    title: 'Pulp Fiction',
+    writer: 'Quentin Tarantino',
+    year: 1994,
+    actors: [ 'John Travolta', 'Uma Thurman' ]
+  },
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90c"),
+    title: 'Inglorious Basterds',
+    writer: 'Quentin Tarantino',
+    year: 2009,
+    actors: [ 'Brad Pitt', 'Diane Kruger', 'Eli Roth' ]
+  }
+]
+Atlas atlas-12pcvr-shard-0 [primary] test> db.movies.find({actors:"Brad Pitt"})
+[
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90a"),
+    title: 'Fight Club',
+    writer: 'Chuck Palahniuko',
+    year: 1999,
+    actors: [ 'Brad Pitt', 'Edward Norton' ]
+  },
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90c"),
+    title: 'Inglorious Basterds',
+    writer: 'Quentin Tarantino',
+    year: 2009,
+    actors: [ 'Brad Pitt', 'Diane Kruger', 'Eli Roth' ]
+  }
+]
+Atlas atlas-12pcvr-shard-0 [primary] test> db.movies.find({franchise:"The Hobbit"})
+[
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90d"),
+    title: 'The Hobbit: An Unexpected Journey',
+    writer: 'J.R.R. Tolkein',
+    year: 2012,
+    franchise: 'The Hobbit'
+  },
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90e"),
+    title: 'The Hobbit: The Desolation of Smaug',
+    writer: 'J.R.R. Tolkein',
+    year: 2013,
+    franchise: 'The Hobbit'
+  }
+]
+Atlas atlas-12pcvr-shard-0 [primary] test> db.movies.find({$and:[{year:{$gte:1990}},{year:{$lt:2000}}]})
+[
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90a"),
+    title: 'Fight Club',
+    writer: 'Chuck Palahniuko',
+    year: 1999,
+    actors: [ 'Brad Pitt', 'Edward Norton' ]
+  },
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90b"),
+    title: 'Pulp Fiction',
+    writer: 'Quentin Tarantino',
+    year: 1994,
+    actors: [ 'John Travolta', 'Uma Thurman' ]
+  }
+]
+Atlas atlas-12pcvr-shard-0 [primary] test> db.movies.find({$or:[{year:{$gte:2010}},{year:{$lt:2000}}]})
+[
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90a"),
+    title: 'Fight Club',
+    writer: 'Chuck Palahniuko',
+    year: 1999,
+    actors: [ 'Brad Pitt', 'Edward Norton' ]
+  },
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90b"),
+    title: 'Pulp Fiction',
+    writer: 'Quentin Tarantino',
+    year: 1994,
+    actors: [ 'John Travolta', 'Uma Thurman' ]
+  },
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90d"),
+    title: 'The Hobbit: An Unexpected Journey',
+    writer: 'J.R.R. Tolkein',
+    year: 2012,
+    franchise: 'The Hobbit'
+  },
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90e"),
+    title: 'The Hobbit: The Desolation of Smaug',
+    writer: 'J.R.R. Tolkein',
+    year: 2013,
+    franchise: 'The Hobbit'
+  },
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90f"),
+    title: 'The Hobbit: The Battle of the Five Armies',
+    writer: 'J.R.R. Tolkein',
+    year: 2012,
+    synopsis: 'Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness.'
+  }
+]
+Atlas atlas-12pcvr-shard-0 [primary] test> db.movies.update({title:"The Hobbit: An Unexpected Journey"},{$set:{synopsis:"A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."}})
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-12pcvr-shard-0 [primary] test> db.movies.updateOne({title:"The Hobbit: The Desolation of Smaug"},{$set:{synoAtlas atlas-12pcvr-shard-0 [primary] test> db.movies.updateOne({title:"The Hobbit: The Desolation of Smaug"},{$set:{synopsis:"The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-12pcvr-shard-0 [primary] test> db.movies.updateOne({title:"Pulp Fiction"},{$push:{actors :"Samuel L. Jackson" }})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-12pcvr-shard-0 [primary] test> db.movies.find({synopsis:{$regex:"Bilbo"}})
+[
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90d"),
+    title: 'The Hobbit: An Unexpected Journey',
+    writer: 'J.R.R. Tolkein',
+    year: 2012,
+    franchise: 'The Hobbit',
+    synopsis: 'A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug.'
+  },
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90e"),
+    title: 'The Hobbit: The Desolation of Smaug',
+    writer: 'J.R.R. Tolkein',
+    year: 2013,
+    franchise: 'The Hobbit',
+    synopsis: 'The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring.'
+  },
+  {
+    _id: ObjectId("62b183db11d0dec46e11a90f"),
+    title: 'The Hobbit: The Battle of the Five Armies',
+    writer: 'J.R.R. Tolkein',
+    year: 2012,
+    synopsis: 'Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness.'
+  }
+]
+Atlas atlas-12pcvr-shard-0 [primary] test> db.users.insertOne({username:"GoodGuyGreg",first_name:"Good Guy",last_name:"Greg"})
+{
+  acknowledged: true,
+  insertedId: ObjectId("62b19e61a691a5fea8501336")
+}
